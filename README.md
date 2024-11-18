@@ -11,3 +11,8 @@ Un serveur de **développement** sera installé sur ma propre machine MacBook Pr
 La synchronisation se fera manuellement sur mon dépôt gitHub. 
 
 ### Environnement de production
+
+![1](1.jpg)
+
+
+
