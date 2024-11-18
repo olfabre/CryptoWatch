@@ -12,7 +12,27 @@ La synchronisation se fera manuellement sur mon dépôt gitHub.
 
 ### Environnement de production
 
-![1](1.jpg)
+<img src="1.jpg" alt="1" style="zoom:50%;" />
+
+```python
+def 
+```
 
 
 
+```mermaid
+gitGraph
+  commit
+  commit
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
+```
+
+```
+```
