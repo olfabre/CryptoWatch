@@ -2,6 +2,10 @@
 
 ## Novembre 2024
 
+### 06/12/2024
+- Debeug MVC (problème version php)
+- Mis en place de la connexion DataBase PostGress
+
 ### 29/11/2024
 - Création et organisation des fichiers de suivi du projet
 - Création d'un socle Model-View-Controler en php
