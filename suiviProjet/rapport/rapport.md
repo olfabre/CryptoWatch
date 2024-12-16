@@ -1,4 +1,4 @@
-10 décembre
+10 décembre au 16 décembre
 
 - Mis en place du site kawaiimediagroup.com qui hébergera les fichiers de l'application (serveur de production environnement Apache et php version 8.2.26  )
 
@@ -114,7 +114,57 @@ On le voit afficher sur docker desktop dans l'onglet image
 
 ![4](4.jpg)
 
+mais aussi sur cli
+
+```bash
+(base) olfabre@MacBook-Pro-de-Olivier ~ % docker images
+REPOSITORY   TAG          IMAGE ID       CREATED       SIZE
+php          7.4.33-cli   7bbbb12d1498   2 years ago   474MB
+```
 
 
 
+Ensuite je vais sur les préférences de mon IDE PhpStorm
+
+![5](5.jpg)
+
+Aller et cliquer les parametrages pour **PHP**
+
+![6](6.jpg)
+
+Php language level, on prend la version 7.4
+
+Dans la partie CLI Interpreter , on clique sur le 3 petits points: une fenêtre s'ouvre
+
+![7](7.jpg)
+
+On clique sur la croix en haut à gauche.
+
+![8](8.jpg)
+
+On sélectionne "from Docker..."
+
+Une fenêtre s'ouvre
+
+On sélectionne docker
+
+![9](9.jpg)
+
+On clique sur "new..."
+
+On renomme par exemple "Serveur Docker 7.44.33"
+
+On sélectionne "Detect executable paths automatically"
+
+On sélectionne Docker for Mac "default" car on a Docker Desktop installé
+
+et on clique sur "OK"
+
+![11](11.jpg)
+
+On sélectionne l'image que l'on souhaite prendre, dans notre cas, php:7.4.33-cli
+
+On clique sur "ok"
+
+On s'apperçoit que php n'est pas installé, ce qui est normal car il n y a pas encore de conteneur en route à partir de cette image
 
