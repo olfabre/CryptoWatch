@@ -100,7 +100,13 @@ Server:
 
 le serveur distant est en php 7.4.33
 
-Nous allons donc charger une image pour cette même version
+Nous allons donc charger dans un premeir temps une image légère pour cette même version php 7.4.33
+
+```bash
+docker pull php:7.4.33-cli
+```
+
+![3](3.jpg)
 
 
 
