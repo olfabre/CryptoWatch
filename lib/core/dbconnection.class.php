@@ -21,7 +21,7 @@ private function __construct(){
 	'user'	=> USER,
 	'password' => PASS,
 	'host'	=> HOST,
-	'driver' => 'pdo_pgsql');
+	'driver' => 'pdo_mysql');
 	
 
 
