@@ -1,9 +1,9 @@
 <?php
 
-define ('HOST', 'pedago01c.univ-avignon.fr') ;
+define ('HOST', '') ;
 define ('USER', ''  ) ;
 define ('PASS', '' ) ;
-define ('DB', 'etd' ) ;
+define ('DB', '' ) ;
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
