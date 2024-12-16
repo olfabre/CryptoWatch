@@ -110,3 +110,11 @@ docker pull php:7.4.33-cli
 
 
 
+On le voit afficher sur docker desktop dans l'onglet image
+
+![4](4.jpg)
+
+
+
+
+
