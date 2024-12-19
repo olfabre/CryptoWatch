@@ -168,3 +168,98 @@ On clique sur "ok"
 
 On s'apperçoit que php n'est pas installé, ce qui est normal car il n y a pas encore de conteneur en route à partir de cette image
 
+
+
+
+
+
+
+---
+
+
+
+J'ai installé la bibliothèque tree 
+
+brew install tree
+
+qui permet d'avoir une représentation visuelle de mes arborescences de dossiers au sein d'un projet
+tree > structure.txt
+
+tree
+
+![14](14.jpg)
+
+----
+
+
+
+Dans un répertoire nommé `docker`dans le projet`CryptoWatch` je créé un fichier `docker-compose.yml`
+
+j'y colle:
+
+
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    image: php:8.0.30-apache
+    container_name: cryptowatch-web
+    ports:
+      - "8080:80"
+    volumes:
+      - "/Users/olfabre/Desktop/SERVEUR DEV/CryptoWatch:/var/www/html"
+      - "./php-config/php.ini:/usr/local/etc/php/php.ini"
+    networks:
+      - cryptowatch-network
+
+  db:
+    image: mariadb:10.3.39
+    container_name: cryptowatch-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cryptowatch
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - cryptowatch-network
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    container_name: cryptowatch-phpmyadmin
+    environment:
+      PMA_HOST: cryptowatch-db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8081:80"
+    networks:
+      - cryptowatch-network
+
+volumes:
+  db-data:
+
+networks:
+  cryptowatch-network:
+
+```
+
+
+
+C'est la représentation de mon serveur distant à savoir:
+
+Serveur Débian avec Php 8.0.30
+
+Serveur Db Maria Db (Mysql) 10.3.39
+
+php Admin 5.2.1
+
+Les données sont ici persistantes.
+
+
+

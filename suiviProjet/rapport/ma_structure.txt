@@ -1,0 +1,692 @@
+.
+├── docker
+├── ma_structure.txt
+├── src
+│   ├── LICENSE
+│   ├── css
+│   ├── images
+│   ├── js
+│   ├── lib
+│   │   ├── core
+│   │   │   ├── composer.json
+│   │   │   ├── composer.lock
+│   │   │   ├── context.class.php
+│   │   │   ├── dbconnection.class.php
+│   │   │   ├── orm
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── README.md
+│   │   │   │   ├── SECURITY.md
+│   │   │   │   ├── UPGRADE.md
+│   │   │   │   ├── bin
+│   │   │   │   │   ├── doctrine
+│   │   │   │   │   ├── doctrine-pear.php
+│   │   │   │   │   ├── doctrine.bat
+│   │   │   │   │   └── doctrine.php
+│   │   │   │   ├── composer.json
+│   │   │   │   ├── docs
+│   │   │   │   │   ├── LICENSE.md
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── bin
+│   │   │   │   │   │   ├── generate-docs.sh
+│   │   │   │   │   │   └── install-dependencies.sh
+│   │   │   │   │   └── en
+│   │   │   │   │       ├── Makefile
+│   │   │   │   │       ├── _exts
+│   │   │   │   │       │   └── configurationblock.py
+│   │   │   │   │       ├── _theme
+│   │   │   │   │       ├── changelog
+│   │   │   │   │       │   └── migration_2_5.rst
+│   │   │   │   │       ├── conf.py
+│   │   │   │   │       ├── cookbook
+│   │   │   │   │       │   ├── advanced-field-value-conversion-using-custom-mapping-types.rst
+│   │   │   │   │       │   ├── aggregate-fields.rst
+│   │   │   │   │       │   ├── custom-mapping-types.rst
+│   │   │   │   │       │   ├── decorator-pattern.rst
+│   │   │   │   │       │   ├── dql-custom-walkers.rst
+│   │   │   │   │       │   ├── dql-user-defined-functions.rst
+│   │   │   │   │       │   ├── entities-in-session.rst
+│   │   │   │   │       │   ├── implementing-arrayaccess-for-domain-objects.rst
+│   │   │   │   │       │   ├── implementing-the-notify-changetracking-policy.rst
+│   │   │   │   │       │   ├── implementing-wakeup-or-clone.rst
+│   │   │   │   │       │   ├── integrating-with-codeigniter.rst
+│   │   │   │   │       │   ├── mysql-enums.rst
+│   │   │   │   │       │   ├── resolve-target-entity-listener.rst
+│   │   │   │   │       │   ├── sql-table-prefixes.rst
+│   │   │   │   │       │   ├── strategy-cookbook-introduction.rst
+│   │   │   │   │       │   ├── validation-of-entities.rst
+│   │   │   │   │       │   └── working-with-datetime.rst
+│   │   │   │   │       ├── index.rst
+│   │   │   │   │       ├── make.bat
+│   │   │   │   │       ├── reference
+│   │   │   │   │       │   ├── advanced-configuration.rst
+│   │   │   │   │       │   ├── annotations-reference.rst
+│   │   │   │   │       │   ├── architecture.rst
+│   │   │   │   │       │   ├── association-mapping.rst
+│   │   │   │   │       │   ├── basic-mapping.rst
+│   │   │   │   │       │   ├── batch-processing.rst
+│   │   │   │   │       │   ├── best-practices.rst
+│   │   │   │   │       │   ├── caching.rst
+│   │   │   │   │       │   ├── change-tracking-policies.rst
+│   │   │   │   │       │   ├── configuration.rst
+│   │   │   │   │       │   ├── dql-doctrine-query-language.rst
+│   │   │   │   │       │   ├── events.rst
+│   │   │   │   │       │   ├── faq.rst
+│   │   │   │   │       │   ├── filters.rst
+│   │   │   │   │       │   ├── improving-performance.rst
+│   │   │   │   │       │   ├── inheritance-mapping.rst
+│   │   │   │   │       │   ├── installation.rst
+│   │   │   │   │       │   ├── limitations-and-known-issues.rst
+│   │   │   │   │       │   ├── metadata-drivers.rst
+│   │   │   │   │       │   ├── namingstrategy.rst
+│   │   │   │   │       │   ├── native-sql.rst
+│   │   │   │   │       │   ├── partial-objects.rst
+│   │   │   │   │       │   ├── php-mapping.rst
+│   │   │   │   │       │   ├── query-builder.rst
+│   │   │   │   │       │   ├── second-level-cache.rst
+│   │   │   │   │       │   ├── security.rst
+│   │   │   │   │       │   ├── tools.rst
+│   │   │   │   │       │   ├── transactions-and-concurrency.rst
+│   │   │   │   │       │   ├── unitofwork-associations.rst
+│   │   │   │   │       │   ├── unitofwork.rst
+│   │   │   │   │       │   ├── working-with-associations.rst
+│   │   │   │   │       │   ├── working-with-objects.rst
+│   │   │   │   │       │   ├── xml-mapping.rst
+│   │   │   │   │       │   └── yaml-mapping.rst
+│   │   │   │   │       ├── toc.rst
+│   │   │   │   │       └── tutorials
+│   │   │   │   │           ├── composite-primary-keys.rst
+│   │   │   │   │           ├── embeddables.rst
+│   │   │   │   │           ├── extra-lazy-associations.rst
+│   │   │   │   │           ├── getting-started-database.rst
+│   │   │   │   │           ├── getting-started-models.rst
+│   │   │   │   │           ├── getting-started.rst
+│   │   │   │   │           ├── ordered-associations.rst
+│   │   │   │   │           ├── override-field-association-mappings-in-subclasses.rst
+│   │   │   │   │           ├── pagination.rst
+│   │   │   │   │           └── working-with-indexed-associations.rst
+│   │   │   │   ├── doctrine-mapping.xsd
+│   │   │   │   ├── lib
+│   │   │   │   │   └── Doctrine
+│   │   │   │   │       └── ORM
+│   │   │   │   │           ├── AbstractQuery.php
+│   │   │   │   │           ├── Cache
+│   │   │   │   │           │   ├── AssociationCacheEntry.php
+│   │   │   │   │           │   ├── CacheConfiguration.php
+│   │   │   │   │           │   ├── CacheEntry.php
+│   │   │   │   │           │   ├── CacheException.php
+│   │   │   │   │           │   ├── CacheFactory.php
+│   │   │   │   │           │   ├── CacheKey.php
+│   │   │   │   │           │   ├── CollectionCacheEntry.php
+│   │   │   │   │           │   ├── CollectionCacheKey.php
+│   │   │   │   │           │   ├── CollectionHydrator.php
+│   │   │   │   │           │   ├── ConcurrentRegion.php
+│   │   │   │   │           │   ├── DefaultCache.php
+│   │   │   │   │           │   ├── DefaultCacheFactory.php
+│   │   │   │   │           │   ├── DefaultCollectionHydrator.php
+│   │   │   │   │           │   ├── DefaultEntityHydrator.php
+│   │   │   │   │           │   ├── DefaultQueryCache.php
+│   │   │   │   │           │   ├── EntityCacheEntry.php
+│   │   │   │   │           │   ├── EntityCacheKey.php
+│   │   │   │   │           │   ├── EntityHydrator.php
+│   │   │   │   │           │   ├── Lock.php
+│   │   │   │   │           │   ├── LockException.php
+│   │   │   │   │           │   ├── Logging
+│   │   │   │   │           │   │   ├── CacheLogger.php
+│   │   │   │   │           │   │   ├── CacheLoggerChain.php
+│   │   │   │   │           │   │   └── StatisticsCacheLogger.php
+│   │   │   │   │           │   ├── MultiGetRegion.php
+│   │   │   │   │           │   ├── Persister
+│   │   │   │   │           │   │   ├── CachedPersister.php
+│   │   │   │   │           │   │   ├── Collection
+│   │   │   │   │           │   │   │   ├── AbstractCollectionPersister.php
+│   │   │   │   │           │   │   │   ├── CachedCollectionPersister.php
+│   │   │   │   │           │   │   │   ├── NonStrictReadWriteCachedCollectionPersister.php
+│   │   │   │   │           │   │   │   ├── ReadOnlyCachedCollectionPersister.php
+│   │   │   │   │           │   │   │   └── ReadWriteCachedCollectionPersister.php
+│   │   │   │   │           │   │   └── Entity
+│   │   │   │   │           │   │       ├── AbstractEntityPersister.php
+│   │   │   │   │           │   │       ├── CachedEntityPersister.php
+│   │   │   │   │           │   │       ├── NonStrictReadWriteCachedEntityPersister.php
+│   │   │   │   │           │   │       ├── ReadOnlyCachedEntityPersister.php
+│   │   │   │   │           │   │       └── ReadWriteCachedEntityPersister.php
+│   │   │   │   │           │   ├── QueryCache.php
+│   │   │   │   │           │   ├── QueryCacheEntry.php
+│   │   │   │   │           │   ├── QueryCacheKey.php
+│   │   │   │   │           │   ├── QueryCacheValidator.php
+│   │   │   │   │           │   ├── Region
+│   │   │   │   │           │   │   ├── DefaultMultiGetRegion.php
+│   │   │   │   │           │   │   ├── DefaultRegion.php
+│   │   │   │   │           │   │   ├── FileLockRegion.php
+│   │   │   │   │           │   │   └── UpdateTimestampCache.php
+│   │   │   │   │           │   ├── Region.php
+│   │   │   │   │           │   ├── RegionsConfiguration.php
+│   │   │   │   │           │   ├── TimestampCacheEntry.php
+│   │   │   │   │           │   ├── TimestampCacheKey.php
+│   │   │   │   │           │   ├── TimestampQueryCacheValidator.php
+│   │   │   │   │           │   └── TimestampRegion.php
+│   │   │   │   │           ├── Cache.php
+│   │   │   │   │           ├── Configuration.php
+│   │   │   │   │           ├── Decorator
+│   │   │   │   │           │   └── EntityManagerDecorator.php
+│   │   │   │   │           ├── EntityManager.php
+│   │   │   │   │           ├── EntityManagerInterface.php
+│   │   │   │   │           ├── EntityNotFoundException.php
+│   │   │   │   │           ├── EntityRepository.php
+│   │   │   │   │           ├── Event
+│   │   │   │   │           │   ├── LifecycleEventArgs.php
+│   │   │   │   │           │   ├── ListenersInvoker.php
+│   │   │   │   │           │   ├── LoadClassMetadataEventArgs.php
+│   │   │   │   │           │   ├── OnClassMetadataNotFoundEventArgs.php
+│   │   │   │   │           │   ├── OnClearEventArgs.php
+│   │   │   │   │           │   ├── OnFlushEventArgs.php
+│   │   │   │   │           │   ├── PostFlushEventArgs.php
+│   │   │   │   │           │   ├── PreFlushEventArgs.php
+│   │   │   │   │           │   └── PreUpdateEventArgs.php
+│   │   │   │   │           ├── Events.php
+│   │   │   │   │           ├── Id
+│   │   │   │   │           │   ├── AbstractIdGenerator.php
+│   │   │   │   │           │   ├── AssignedGenerator.php
+│   │   │   │   │           │   ├── BigIntegerIdentityGenerator.php
+│   │   │   │   │           │   ├── IdentityGenerator.php
+│   │   │   │   │           │   ├── SequenceGenerator.php
+│   │   │   │   │           │   ├── TableGenerator.php
+│   │   │   │   │           │   └── UuidGenerator.php
+│   │   │   │   │           ├── Internal
+│   │   │   │   │           │   ├── CommitOrderCalculator.php
+│   │   │   │   │           │   ├── Hydration
+│   │   │   │   │           │   │   ├── AbstractHydrator.php
+│   │   │   │   │           │   │   ├── ArrayHydrator.php
+│   │   │   │   │           │   │   ├── HydrationException.php
+│   │   │   │   │           │   │   ├── IterableResult.php
+│   │   │   │   │           │   │   ├── ObjectHydrator.php
+│   │   │   │   │           │   │   ├── ScalarHydrator.php
+│   │   │   │   │           │   │   ├── SimpleObjectHydrator.php
+│   │   │   │   │           │   │   └── SingleScalarHydrator.php
+│   │   │   │   │           │   └── HydrationCompleteHandler.php
+│   │   │   │   │           ├── LazyCriteriaCollection.php
+│   │   │   │   │           ├── Mapping
+│   │   │   │   │           │   ├── Annotation.php
+│   │   │   │   │           │   ├── AnsiQuoteStrategy.php
+│   │   │   │   │           │   ├── AssociationOverride.php
+│   │   │   │   │           │   ├── AssociationOverrides.php
+│   │   │   │   │           │   ├── AttributeOverride.php
+│   │   │   │   │           │   ├── AttributeOverrides.php
+│   │   │   │   │           │   ├── Builder
+│   │   │   │   │           │   │   ├── AssociationBuilder.php
+│   │   │   │   │           │   │   ├── ClassMetadataBuilder.php
+│   │   │   │   │           │   │   ├── EmbeddedBuilder.php
+│   │   │   │   │           │   │   ├── EntityListenerBuilder.php
+│   │   │   │   │           │   │   ├── FieldBuilder.php
+│   │   │   │   │           │   │   ├── ManyToManyAssociationBuilder.php
+│   │   │   │   │           │   │   └── OneToManyAssociationBuilder.php
+│   │   │   │   │           │   ├── Cache.php
+│   │   │   │   │           │   ├── ChangeTrackingPolicy.php
+│   │   │   │   │           │   ├── ClassMetadata.php
+│   │   │   │   │           │   ├── ClassMetadataFactory.php
+│   │   │   │   │           │   ├── ClassMetadataInfo.php
+│   │   │   │   │           │   ├── Column.php
+│   │   │   │   │           │   ├── ColumnResult.php
+│   │   │   │   │           │   ├── CustomIdGenerator.php
+│   │   │   │   │           │   ├── DefaultEntityListenerResolver.php
+│   │   │   │   │           │   ├── DefaultNamingStrategy.php
+│   │   │   │   │           │   ├── DefaultQuoteStrategy.php
+│   │   │   │   │           │   ├── DiscriminatorColumn.php
+│   │   │   │   │           │   ├── DiscriminatorMap.php
+│   │   │   │   │           │   ├── Driver
+│   │   │   │   │           │   │   ├── AnnotationDriver.php
+│   │   │   │   │           │   │   ├── DatabaseDriver.php
+│   │   │   │   │           │   │   ├── DoctrineAnnotations.php
+│   │   │   │   │           │   │   ├── DriverChain.php
+│   │   │   │   │           │   │   ├── PHPDriver.php
+│   │   │   │   │           │   │   ├── SimplifiedXmlDriver.php
+│   │   │   │   │           │   │   ├── SimplifiedYamlDriver.php
+│   │   │   │   │           │   │   ├── StaticPHPDriver.php
+│   │   │   │   │           │   │   ├── XmlDriver.php
+│   │   │   │   │           │   │   └── YamlDriver.php
+│   │   │   │   │           │   ├── Embeddable.php
+│   │   │   │   │           │   ├── Embedded.php
+│   │   │   │   │           │   ├── Entity.php
+│   │   │   │   │           │   ├── EntityListenerResolver.php
+│   │   │   │   │           │   ├── EntityListeners.php
+│   │   │   │   │           │   ├── EntityResult.php
+│   │   │   │   │           │   ├── FieldResult.php
+│   │   │   │   │           │   ├── GeneratedValue.php
+│   │   │   │   │           │   ├── HasLifecycleCallbacks.php
+│   │   │   │   │           │   ├── Id.php
+│   │   │   │   │           │   ├── Index.php
+│   │   │   │   │           │   ├── InheritanceType.php
+│   │   │   │   │           │   ├── JoinColumn.php
+│   │   │   │   │           │   ├── JoinColumns.php
+│   │   │   │   │           │   ├── JoinTable.php
+│   │   │   │   │           │   ├── ManyToMany.php
+│   │   │   │   │           │   ├── ManyToOne.php
+│   │   │   │   │           │   ├── MappedSuperclass.php
+│   │   │   │   │           │   ├── MappingException.php
+│   │   │   │   │           │   ├── NamedNativeQueries.php
+│   │   │   │   │           │   ├── NamedNativeQuery.php
+│   │   │   │   │           │   ├── NamedQueries.php
+│   │   │   │   │           │   ├── NamedQuery.php
+│   │   │   │   │           │   ├── NamingStrategy.php
+│   │   │   │   │           │   ├── OneToMany.php
+│   │   │   │   │           │   ├── OneToOne.php
+│   │   │   │   │           │   ├── OrderBy.php
+│   │   │   │   │           │   ├── PostLoad.php
+│   │   │   │   │           │   ├── PostPersist.php
+│   │   │   │   │           │   ├── PostRemove.php
+│   │   │   │   │           │   ├── PostUpdate.php
+│   │   │   │   │           │   ├── PreFlush.php
+│   │   │   │   │           │   ├── PrePersist.php
+│   │   │   │   │           │   ├── PreRemove.php
+│   │   │   │   │           │   ├── PreUpdate.php
+│   │   │   │   │           │   ├── QuoteStrategy.php
+│   │   │   │   │           │   ├── Reflection
+│   │   │   │   │           │   │   └── ReflectionPropertiesGetter.php
+│   │   │   │   │           │   ├── ReflectionEmbeddedProperty.php
+│   │   │   │   │           │   ├── SequenceGenerator.php
+│   │   │   │   │           │   ├── SqlResultSetMapping.php
+│   │   │   │   │           │   ├── SqlResultSetMappings.php
+│   │   │   │   │           │   ├── Table.php
+│   │   │   │   │           │   ├── UnderscoreNamingStrategy.php
+│   │   │   │   │           │   ├── UniqueConstraint.php
+│   │   │   │   │           │   └── Version.php
+│   │   │   │   │           ├── NativeQuery.php
+│   │   │   │   │           ├── NoResultException.php
+│   │   │   │   │           ├── NonUniqueResultException.php
+│   │   │   │   │           ├── ORMException.php
+│   │   │   │   │           ├── ORMInvalidArgumentException.php
+│   │   │   │   │           ├── OptimisticLockException.php
+│   │   │   │   │           ├── PersistentCollection.php
+│   │   │   │   │           ├── Persisters
+│   │   │   │   │           │   ├── Collection
+│   │   │   │   │           │   │   ├── AbstractCollectionPersister.php
+│   │   │   │   │           │   │   ├── CollectionPersister.php
+│   │   │   │   │           │   │   ├── ManyToManyPersister.php
+│   │   │   │   │           │   │   └── OneToManyPersister.php
+│   │   │   │   │           │   ├── Entity
+│   │   │   │   │           │   │   ├── AbstractEntityInheritancePersister.php
+│   │   │   │   │           │   │   ├── BasicEntityPersister.php
+│   │   │   │   │           │   │   ├── CachedPersisterContext.php
+│   │   │   │   │           │   │   ├── EntityPersister.php
+│   │   │   │   │           │   │   ├── JoinedSubclassPersister.php
+│   │   │   │   │           │   │   └── SingleTablePersister.php
+│   │   │   │   │           │   ├── PersisterException.php
+│   │   │   │   │           │   ├── SqlExpressionVisitor.php
+│   │   │   │   │           │   └── SqlValueVisitor.php
+│   │   │   │   │           ├── PessimisticLockException.php
+│   │   │   │   │           ├── Proxy
+│   │   │   │   │           │   ├── Autoloader.php
+│   │   │   │   │           │   ├── Proxy.php
+│   │   │   │   │           │   └── ProxyFactory.php
+│   │   │   │   │           ├── Query
+│   │   │   │   │           │   ├── AST
+│   │   │   │   │           │   │   ├── ASTException.php
+│   │   │   │   │           │   │   ├── AggregateExpression.php
+│   │   │   │   │           │   │   ├── ArithmeticExpression.php
+│   │   │   │   │           │   │   ├── ArithmeticFactor.php
+│   │   │   │   │           │   │   ├── ArithmeticTerm.php
+│   │   │   │   │           │   │   ├── BetweenExpression.php
+│   │   │   │   │           │   │   ├── CoalesceExpression.php
+│   │   │   │   │           │   │   ├── CollectionMemberExpression.php
+│   │   │   │   │           │   │   ├── ComparisonExpression.php
+│   │   │   │   │           │   │   ├── ConditionalExpression.php
+│   │   │   │   │           │   │   ├── ConditionalFactor.php
+│   │   │   │   │           │   │   ├── ConditionalPrimary.php
+│   │   │   │   │           │   │   ├── ConditionalTerm.php
+│   │   │   │   │           │   │   ├── DeleteClause.php
+│   │   │   │   │           │   │   ├── DeleteStatement.php
+│   │   │   │   │           │   │   ├── EmptyCollectionComparisonExpression.php
+│   │   │   │   │           │   │   ├── ExistsExpression.php
+│   │   │   │   │           │   │   ├── FromClause.php
+│   │   │   │   │           │   │   ├── Functions
+│   │   │   │   │           │   │   │   ├── AbsFunction.php
+│   │   │   │   │           │   │   │   ├── AvgFunction.php
+│   │   │   │   │           │   │   │   ├── BitAndFunction.php
+│   │   │   │   │           │   │   │   ├── BitOrFunction.php
+│   │   │   │   │           │   │   │   ├── ConcatFunction.php
+│   │   │   │   │           │   │   │   ├── CountFunction.php
+│   │   │   │   │           │   │   │   ├── CurrentDateFunction.php
+│   │   │   │   │           │   │   │   ├── CurrentTimeFunction.php
+│   │   │   │   │           │   │   │   ├── CurrentTimestampFunction.php
+│   │   │   │   │           │   │   │   ├── DateAddFunction.php
+│   │   │   │   │           │   │   │   ├── DateDiffFunction.php
+│   │   │   │   │           │   │   │   ├── DateSubFunction.php
+│   │   │   │   │           │   │   │   ├── FunctionNode.php
+│   │   │   │   │           │   │   │   ├── IdentityFunction.php
+│   │   │   │   │           │   │   │   ├── LengthFunction.php
+│   │   │   │   │           │   │   │   ├── LocateFunction.php
+│   │   │   │   │           │   │   │   ├── LowerFunction.php
+│   │   │   │   │           │   │   │   ├── MaxFunction.php
+│   │   │   │   │           │   │   │   ├── MinFunction.php
+│   │   │   │   │           │   │   │   ├── ModFunction.php
+│   │   │   │   │           │   │   │   ├── SizeFunction.php
+│   │   │   │   │           │   │   │   ├── SqrtFunction.php
+│   │   │   │   │           │   │   │   ├── SubstringFunction.php
+│   │   │   │   │           │   │   │   ├── SumFunction.php
+│   │   │   │   │           │   │   │   ├── TrimFunction.php
+│   │   │   │   │           │   │   │   └── UpperFunction.php
+│   │   │   │   │           │   │   ├── GeneralCaseExpression.php
+│   │   │   │   │           │   │   ├── GroupByClause.php
+│   │   │   │   │           │   │   ├── HavingClause.php
+│   │   │   │   │           │   │   ├── IdentificationVariableDeclaration.php
+│   │   │   │   │           │   │   ├── InExpression.php
+│   │   │   │   │           │   │   ├── IndexBy.php
+│   │   │   │   │           │   │   ├── InputParameter.php
+│   │   │   │   │           │   │   ├── InstanceOfExpression.php
+│   │   │   │   │           │   │   ├── Join.php
+│   │   │   │   │           │   │   ├── JoinAssociationDeclaration.php
+│   │   │   │   │           │   │   ├── JoinAssociationPathExpression.php
+│   │   │   │   │           │   │   ├── JoinClassPathExpression.php
+│   │   │   │   │           │   │   ├── JoinVariableDeclaration.php
+│   │   │   │   │           │   │   ├── LikeExpression.php
+│   │   │   │   │           │   │   ├── Literal.php
+│   │   │   │   │           │   │   ├── NewObjectExpression.php
+│   │   │   │   │           │   │   ├── Node.php
+│   │   │   │   │           │   │   ├── NullComparisonExpression.php
+│   │   │   │   │           │   │   ├── NullIfExpression.php
+│   │   │   │   │           │   │   ├── OrderByClause.php
+│   │   │   │   │           │   │   ├── OrderByItem.php
+│   │   │   │   │           │   │   ├── ParenthesisExpression.php
+│   │   │   │   │           │   │   ├── PartialObjectExpression.php
+│   │   │   │   │           │   │   ├── PathExpression.php
+│   │   │   │   │           │   │   ├── QuantifiedExpression.php
+│   │   │   │   │           │   │   ├── RangeVariableDeclaration.php
+│   │   │   │   │           │   │   ├── SelectClause.php
+│   │   │   │   │           │   │   ├── SelectExpression.php
+│   │   │   │   │           │   │   ├── SelectStatement.php
+│   │   │   │   │           │   │   ├── SimpleArithmeticExpression.php
+│   │   │   │   │           │   │   ├── SimpleCaseExpression.php
+│   │   │   │   │           │   │   ├── SimpleSelectClause.php
+│   │   │   │   │           │   │   ├── SimpleSelectExpression.php
+│   │   │   │   │           │   │   ├── SimpleWhenClause.php
+│   │   │   │   │           │   │   ├── Subselect.php
+│   │   │   │   │           │   │   ├── SubselectFromClause.php
+│   │   │   │   │           │   │   ├── SubselectIdentificationVariableDeclaration.php
+│   │   │   │   │           │   │   ├── UpdateClause.php
+│   │   │   │   │           │   │   ├── UpdateItem.php
+│   │   │   │   │           │   │   ├── UpdateStatement.php
+│   │   │   │   │           │   │   ├── WhenClause.php
+│   │   │   │   │           │   │   └── WhereClause.php
+│   │   │   │   │           │   ├── Exec
+│   │   │   │   │           │   │   ├── AbstractSqlExecutor.php
+│   │   │   │   │           │   │   ├── MultiTableDeleteExecutor.php
+│   │   │   │   │           │   │   ├── MultiTableUpdateExecutor.php
+│   │   │   │   │           │   │   ├── SingleSelectExecutor.php
+│   │   │   │   │           │   │   └── SingleTableDeleteUpdateExecutor.php
+│   │   │   │   │           │   ├── Expr
+│   │   │   │   │           │   │   ├── Andx.php
+│   │   │   │   │           │   │   ├── Base.php
+│   │   │   │   │           │   │   ├── Comparison.php
+│   │   │   │   │           │   │   ├── Composite.php
+│   │   │   │   │           │   │   ├── From.php
+│   │   │   │   │           │   │   ├── Func.php
+│   │   │   │   │           │   │   ├── GroupBy.php
+│   │   │   │   │           │   │   ├── Join.php
+│   │   │   │   │           │   │   ├── Literal.php
+│   │   │   │   │           │   │   ├── Math.php
+│   │   │   │   │           │   │   ├── OrderBy.php
+│   │   │   │   │           │   │   ├── Orx.php
+│   │   │   │   │           │   │   └── Select.php
+│   │   │   │   │           │   ├── Expr.php
+│   │   │   │   │           │   ├── Filter
+│   │   │   │   │           │   │   └── SQLFilter.php
+│   │   │   │   │           │   ├── FilterCollection.php
+│   │   │   │   │           │   ├── Lexer.php
+│   │   │   │   │           │   ├── Parameter.php
+│   │   │   │   │           │   ├── ParameterTypeInferer.php
+│   │   │   │   │           │   ├── Parser.php
+│   │   │   │   │           │   ├── ParserResult.php
+│   │   │   │   │           │   ├── Printer.php
+│   │   │   │   │           │   ├── QueryException.php
+│   │   │   │   │           │   ├── QueryExpressionVisitor.php
+│   │   │   │   │           │   ├── ResultSetMapping.php
+│   │   │   │   │           │   ├── ResultSetMappingBuilder.php
+│   │   │   │   │           │   ├── SqlWalker.php
+│   │   │   │   │           │   ├── TreeWalker.php
+│   │   │   │   │           │   ├── TreeWalkerAdapter.php
+│   │   │   │   │           │   ├── TreeWalkerChain.php
+│   │   │   │   │           │   └── TreeWalkerChainIterator.php
+│   │   │   │   │           ├── Query.php
+│   │   │   │   │           ├── QueryBuilder.php
+│   │   │   │   │           ├── Repository
+│   │   │   │   │           │   ├── DefaultRepositoryFactory.php
+│   │   │   │   │           │   └── RepositoryFactory.php
+│   │   │   │   │           ├── Tools
+│   │   │   │   │           │   ├── AttachEntityListenersListener.php
+│   │   │   │   │           │   ├── Console
+│   │   │   │   │           │   │   ├── Command
+│   │   │   │   │           │   │   │   ├── ClearCache
+│   │   │   │   │           │   │   │   │   ├── CollectionRegionCommand.php
+│   │   │   │   │           │   │   │   │   ├── EntityRegionCommand.php
+│   │   │   │   │           │   │   │   │   ├── MetadataCommand.php
+│   │   │   │   │           │   │   │   │   ├── QueryCommand.php
+│   │   │   │   │           │   │   │   │   ├── QueryRegionCommand.php
+│   │   │   │   │           │   │   │   │   └── ResultCommand.php
+│   │   │   │   │           │   │   │   ├── ConvertDoctrine1SchemaCommand.php
+│   │   │   │   │           │   │   │   ├── ConvertMappingCommand.php
+│   │   │   │   │           │   │   │   ├── EnsureProductionSettingsCommand.php
+│   │   │   │   │           │   │   │   ├── GenerateEntitiesCommand.php
+│   │   │   │   │           │   │   │   ├── GenerateProxiesCommand.php
+│   │   │   │   │           │   │   │   ├── GenerateRepositoriesCommand.php
+│   │   │   │   │           │   │   │   ├── InfoCommand.php
+│   │   │   │   │           │   │   │   ├── MappingDescribeCommand.php
+│   │   │   │   │           │   │   │   ├── RunDqlCommand.php
+│   │   │   │   │           │   │   │   ├── SchemaTool
+│   │   │   │   │           │   │   │   │   ├── AbstractCommand.php
+│   │   │   │   │           │   │   │   │   ├── CreateCommand.php
+│   │   │   │   │           │   │   │   │   ├── DropCommand.php
+│   │   │   │   │           │   │   │   │   └── UpdateCommand.php
+│   │   │   │   │           │   │   │   └── ValidateSchemaCommand.php
+│   │   │   │   │           │   │   ├── ConsoleRunner.php
+│   │   │   │   │           │   │   ├── Helper
+│   │   │   │   │           │   │   │   └── EntityManagerHelper.php
+│   │   │   │   │           │   │   └── MetadataFilter.php
+│   │   │   │   │           │   ├── ConvertDoctrine1Schema.php
+│   │   │   │   │           │   ├── DebugUnitOfWorkListener.php
+│   │   │   │   │           │   ├── DisconnectedClassMetadataFactory.php
+│   │   │   │   │           │   ├── EntityGenerator.php
+│   │   │   │   │           │   ├── EntityRepositoryGenerator.php
+│   │   │   │   │           │   ├── Event
+│   │   │   │   │           │   │   ├── GenerateSchemaEventArgs.php
+│   │   │   │   │           │   │   └── GenerateSchemaTableEventArgs.php
+│   │   │   │   │           │   ├── Export
+│   │   │   │   │           │   │   ├── ClassMetadataExporter.php
+│   │   │   │   │           │   │   ├── Driver
+│   │   │   │   │           │   │   │   ├── AbstractExporter.php
+│   │   │   │   │           │   │   │   ├── AnnotationExporter.php
+│   │   │   │   │           │   │   │   ├── PhpExporter.php
+│   │   │   │   │           │   │   │   ├── XmlExporter.php
+│   │   │   │   │           │   │   │   └── YamlExporter.php
+│   │   │   │   │           │   │   └── ExportException.php
+│   │   │   │   │           │   ├── Pagination
+│   │   │   │   │           │   │   ├── CountOutputWalker.php
+│   │   │   │   │           │   │   ├── CountWalker.php
+│   │   │   │   │           │   │   ├── LimitSubqueryOutputWalker.php
+│   │   │   │   │           │   │   ├── LimitSubqueryWalker.php
+│   │   │   │   │           │   │   ├── Paginator.php
+│   │   │   │   │           │   │   ├── RowNumberOverFunction.php
+│   │   │   │   │           │   │   └── WhereInWalker.php
+│   │   │   │   │           │   ├── ResolveTargetEntityListener.php
+│   │   │   │   │           │   ├── SchemaTool.php
+│   │   │   │   │           │   ├── SchemaValidator.php
+│   │   │   │   │           │   ├── Setup.php
+│   │   │   │   │           │   ├── ToolEvents.php
+│   │   │   │   │           │   └── ToolsException.php
+│   │   │   │   │           ├── TransactionRequiredException.php
+│   │   │   │   │           ├── UnexpectedResultException.php
+│   │   │   │   │           ├── UnitOfWork.php
+│   │   │   │   │           ├── Utility
+│   │   │   │   │           │   ├── HierarchyDiscriminatorResolver.php
+│   │   │   │   │           │   ├── IdentifierFlattener.php
+│   │   │   │   │           │   └── PersisterHelper.php
+│   │   │   │   │           └── Version.php
+│   │   │   │   ├── phpbench.json
+│   │   │   │   └── phpstan.neon
+│   │   │   └── vendor
+│   │   │       ├── autoload.php
+│   │   │       ├── composer
+│   │   │       │   ├── ClassLoader.php
+│   │   │       │   ├── InstalledVersions.php
+│   │   │       │   ├── LICENSE
+│   │   │       │   ├── autoload_classmap.php
+│   │   │       │   ├── autoload_files.php
+│   │   │       │   ├── autoload_namespaces.php
+│   │   │       │   ├── autoload_psr4.php
+│   │   │       │   ├── autoload_real.php
+│   │   │       │   ├── autoload_static.php
+│   │   │       │   ├── installed.json
+│   │   │       │   ├── installed.php
+│   │   │       │   └── platform_check.php
+│   │   │       ├── graham-campbell
+│   │   │       │   └── result-type
+│   │   │       │       ├── LICENSE
+│   │   │       │       ├── composer.json
+│   │   │       │       └── src
+│   │   │       │           ├── Error.php
+│   │   │       │           ├── Result.php
+│   │   │       │           └── Success.php
+│   │   │       ├── phpoption
+│   │   │       │   └── phpoption
+│   │   │       │       ├── LICENSE
+│   │   │       │       ├── composer.json
+│   │   │       │       └── src
+│   │   │       │           └── PhpOption
+│   │   │       │               ├── LazyOption.php
+│   │   │       │               ├── None.php
+│   │   │       │               ├── Option.php
+│   │   │       │               └── Some.php
+│   │   │       ├── symfony
+│   │   │       │   ├── polyfill-ctype
+│   │   │       │   │   ├── Ctype.php
+│   │   │       │   │   ├── LICENSE
+│   │   │       │   │   ├── README.md
+│   │   │       │   │   ├── bootstrap.php
+│   │   │       │   │   ├── bootstrap80.php
+│   │   │       │   │   └── composer.json
+│   │   │       │   ├── polyfill-mbstring
+│   │   │       │   │   ├── LICENSE
+│   │   │       │   │   ├── Mbstring.php
+│   │   │       │   │   ├── README.md
+│   │   │       │   │   ├── Resources
+│   │   │       │   │   │   └── unidata
+│   │   │       │   │   │       ├── caseFolding.php
+│   │   │       │   │   │       ├── lowerCase.php
+│   │   │       │   │   │       ├── titleCaseRegexp.php
+│   │   │       │   │   │       └── upperCase.php
+│   │   │       │   │   ├── bootstrap.php
+│   │   │       │   │   ├── bootstrap80.php
+│   │   │       │   │   └── composer.json
+│   │   │       │   └── polyfill-php80
+│   │   │       │       ├── LICENSE
+│   │   │       │       ├── Php80.php
+│   │   │       │       ├── PhpToken.php
+│   │   │       │       ├── README.md
+│   │   │       │       ├── Resources
+│   │   │       │       │   └── stubs
+│   │   │       │       │       ├── Attribute.php
+│   │   │       │       │       ├── PhpToken.php
+│   │   │       │       │       ├── Stringable.php
+│   │   │       │       │       ├── UnhandledMatchError.php
+│   │   │       │       │       └── ValueError.php
+│   │   │       │       ├── bootstrap.php
+│   │   │       │       └── composer.json
+│   │   │       └── vlucas
+│   │   │           └── phpdotenv
+│   │   │               ├── LICENSE
+│   │   │               ├── composer.json
+│   │   │               └── src
+│   │   │                   ├── Dotenv.php
+│   │   │                   ├── Exception
+│   │   │                   │   ├── ExceptionInterface.php
+│   │   │                   │   ├── InvalidEncodingException.php
+│   │   │                   │   ├── InvalidFileException.php
+│   │   │                   │   ├── InvalidPathException.php
+│   │   │                   │   └── ValidationException.php
+│   │   │                   ├── Loader
+│   │   │                   │   ├── Loader.php
+│   │   │                   │   ├── LoaderInterface.php
+│   │   │                   │   └── Resolver.php
+│   │   │                   ├── Parser
+│   │   │                   │   ├── Entry.php
+│   │   │                   │   ├── EntryParser.php
+│   │   │                   │   ├── Lexer.php
+│   │   │                   │   ├── Lines.php
+│   │   │                   │   ├── Parser.php
+│   │   │                   │   ├── ParserInterface.php
+│   │   │                   │   └── Value.php
+│   │   │                   ├── Repository
+│   │   │                   │   ├── Adapter
+│   │   │                   │   │   ├── AdapterInterface.php
+│   │   │                   │   │   ├── ApacheAdapter.php
+│   │   │                   │   │   ├── ArrayAdapter.php
+│   │   │                   │   │   ├── EnvConstAdapter.php
+│   │   │                   │   │   ├── GuardedWriter.php
+│   │   │                   │   │   ├── ImmutableWriter.php
+│   │   │                   │   │   ├── MultiReader.php
+│   │   │                   │   │   ├── MultiWriter.php
+│   │   │                   │   │   ├── PutenvAdapter.php
+│   │   │                   │   │   ├── ReaderInterface.php
+│   │   │                   │   │   ├── ReplacingWriter.php
+│   │   │                   │   │   ├── ServerConstAdapter.php
+│   │   │                   │   │   └── WriterInterface.php
+│   │   │                   │   ├── AdapterRepository.php
+│   │   │                   │   ├── RepositoryBuilder.php
+│   │   │                   │   └── RepositoryInterface.php
+│   │   │                   ├── Store
+│   │   │                   │   ├── File
+│   │   │                   │   │   ├── Paths.php
+│   │   │                   │   │   └── Reader.php
+│   │   │                   │   ├── FileStore.php
+│   │   │                   │   ├── StoreBuilder.php
+│   │   │                   │   ├── StoreInterface.php
+│   │   │                   │   └── StringStore.php
+│   │   │                   ├── Util
+│   │   │                   │   ├── Regex.php
+│   │   │                   │   └── Str.php
+│   │   │                   └── Validator.php
+│   │   └── core.php
+│   ├── monApplication
+│   │   ├── controller
+│   │   │   └── mainController.php
+│   │   ├── layout
+│   │   │   └── layout.php
+│   │   ├── model
+│   │   │   ├── utilisateur.class.php
+│   │   │   └── utilisateurTable.class.php
+│   │   └── view
+│   │       ├── helloWorldSuccess.php
+│   │       └── indexSuccess.php
+│   └── monApplication.php
+├── suiviProjet
+│   ├── docs
+│   │   ├── technical
+│   │   │   ├── 02_cahierDesCharges.md
+│   │   │   └── 08_documentation.md
+│   │   └── user-guides
+│   ├── planning
+│   │   ├── 07_agenda.md
+│   │   ├── backlog
+│   │   │   └── 03_backlogProduit.md
+│   │   ├── sprints
+│   │   │   ├── 04_planificationSprints.md
+│   │   │   ├── 05_suiviTaches.md
+│   │   │   └── 06_retrospectiveSprints.md
+│   │   └── team
+│   │       └── 01_compositionEquipeScrum.md
+│   └── rapport
+│       ├── 1.jpg
+│       ├── 10.jpg
+│       ├── 11.jpg
+│       ├── 12.jpg
+│       ├── 13.jpg
+│       ├── 2.jpg
+│       ├── 3.jpg
+│       ├── 4.jpg
+│       ├── 5.jpg
+│       ├── 6.jpg
+│       ├── 7.jpg
+│       ├── 8.jpg
+│       ├── 9.jpg
+│       └── rapport.md
+└── tests
+
+102 directories, 588 files
