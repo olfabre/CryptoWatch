@@ -259,7 +259,126 @@ Serveur Db Maria Db (Mysql) 10.3.39
 
 php Admin 5.2.1
 
-Les données sont ici persistantes.
+Les données sont ici persistantes dans le volume `db-data`
+
+Donc nous avons :
+
+1 container qui se nomme `cryptowatch-web`qui est la partie serveur web debian php apache
+
+1 container qui se nomme `cryptowatch-db`qui est le serveur Maria DB (mysql)
+
+1 container qui se nomme `cryptowatch-phpmyadmin` qui est l'accès admin pour la BD
+
+je centralise les fichiers Cron dans le projet
+
+dans le répertoire `/cron`  il y aura cryptowatch.cron qui contiendra toutes les tâches Cron
+
+`update-cron.sh` qui sera le ccript pour installer les tâches Cron
 
 
 
+### **Contenu du fichier `cryptowatch.cron`**
+
+Définissez vos tâches Cron dans un format standard :
+
+```
+bash
+
+
+Copier le code
+# Exécuter le fichier PHP toutes les heures
+0 * * * * /usr/bin/php /var/www/html/script.php >> /var/log/script.log 2>&1
+```
+
+Ajoutez autant de tâches que nécessaire. Ce fichier sera **identique** en local et en production
+
+
+
+
+
+### **Script pour appliquer le fichier Cron : `update-cron.sh`**
+
+Créez un script shell pour appliquer les tâches Cron en local ou en production. Exemple :
+
+```
+bash
+
+
+Copier le code
+#!/bin/bash
+
+# Chemin vers le fichier des tâches Cron
+CRON_FILE="$(pwd)/cron/cryptowatch.cron"
+
+# Vérification que le fichier existe
+if [ ! -f "$CRON_FILE" ]; then
+    echo "Fichier Cron introuvable : $CRON_FILE"
+    exit 1
+fi
+
+# Installer les tâches Cron pour l'utilisateur actuel
+crontab "$CRON_FILE"
+
+echo "Tâches Cron installées avec succès à partir de : $CRON_FILE"
+```
+
+Donnez les droits d'exécution à ce script :
+
+```
+bash
+
+
+Copier le code
+chmod +x cron/update-cron.sh
+```
+
+
+
+### **Utilisation en local**
+
+1. Après avoir configuré ou modifié le fichier 
+
+   ```
+   cryptowatch.cron
+   ```
+
+   , exécutez le script pour appliquer les tâches Cron en local :
+
+   ```
+   bash
+   
+   
+   Copier le code
+   ./cron/update-cron.sh
+   ```
+
+2. Vérifiez que les tâches Cron sont bien configurées :
+
+   ```
+   bash
+   
+   
+   Copier le code
+   crontab -l
+   ```
+
+
+
+### **Intégration avec Docker**
+
+Si vous utilisez Docker pour d'autres services en local (comme PHP ou MariaDB), assurez-vous que votre script `cryptowatch.cron` utilise le bon chemin pour PHP :
+
+- **En local :** `/usr/bin/php` (sur votre machine).
+- **En production :** `/usr/bin/php` (sur le serveur Debian).
+
+Vous pouvez tester vos tâches en exécutant directement la commande dans un conteneur si nécessaire :
+
+```
+bash
+
+
+Copier le code
+docker exec -it cryptowatch-web php /var/www/html/script.php
+```
+
+ 
